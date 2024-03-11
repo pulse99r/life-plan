@@ -11,3 +11,12 @@ Features:
   - How can I stay on track in the future? 
   - Where else in my life are my planned target dates in jeopardy?
   - Are any oe my plans dependent on accomplishing other plans? 
+
+
+Developers:
+- Kenti Johnson 
+
+
+
+
+(c) 2024
