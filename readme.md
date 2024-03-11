@@ -15,6 +15,10 @@
       - How can I stay on track in the future? 
       - Where else in my life are my planned target dates in jeopardy?
       - Are any oe my plans dependent on accomplishing other plans? 
+  - Weekly affirmations, inspiration and encouragement and empowerment to help people stay on track, and support them when the encounter failure. Like Churchill once said, "Success is going from failure to failure with no loss of enthusiasm!"
+  - Games that educate people on "right thinking" and cultivating a culture of positive forward looking thought processes.
+  - Absolutely no push advertising!!!!  There will be a page for ads that people can visit voluntarily.  What they view or click on will not be tracked unless they voluntarily save as a favorite or follow.
+
 
 
 - DEVELOPERS:
