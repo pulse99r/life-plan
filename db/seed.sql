@@ -44,6 +44,8 @@ INSERT INTO lp_auth (user_id, password_hash, admin_role) VALUES
 ( 11, 'abc123', false ),
 ( 12, 'abc123', false );
 
-
+INSERT INTO lp_wod ( word, cat) VALUES
+  ('In the end, you will either have your achievements, or the reason why you don''t.','{"Achievement", "Goals", "Reasons"}')
+  
 
 -- psql -U postgres -f db/seed.sql

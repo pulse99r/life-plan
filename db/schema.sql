@@ -50,6 +50,15 @@ CREATE TABLE lp_auth (
   date_created TIMESTAMP DEFAULT now()
 );
 
+DROP TABLE IF EXISTS lp_wod;
+CREATE TABLE lp_wod (
+  id SERIAL PRIMARY KEY,
+  word TEXT,
+  cat TEXT[],
+  date_created TIMESTAMP DEFAULT now()
+);
+
+
 -- DROP TABLE IF EXISTS lp_permission;
 -- CREATE TABLE lp_permissions (
 --   id SERIAL PRIMARY KEY,

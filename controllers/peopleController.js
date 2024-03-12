@@ -16,9 +16,29 @@ const {
 // * * * *  V A L I D A T I O N  * * * * 
 function validateId (req, res, next){
   console.log('logging validate function: ', req.params.id)
+
+  const id = req.params.id
+  if (id < 1 || id != Number.isInteger(Number(id))){
+    console.log('keep it simple simon!')
+    res.status(400).send('Please enter a valid integer id')
+  }
+
   next()
 }
+function validateBody (req, res, next){
+  console.log('logging validate body function: ', req.params.id)
 
+  const id = req.body.
+  if (id < 1 || id != Number.isInteger(Number(id))){
+    console.log('keep it simple simon!')
+    res.status(400).send('Please enter a valid integer id')
+  }
+
+  next()
+}
+const validatePersonExist =() => {
+  
+}
 // all people route : index / Read
 peopleController.get('/', async (req, res) => {
   try {
@@ -42,7 +62,7 @@ peopleController.get('/:id', validateId, async (req, res) => {
 })
 
 // Create new people : Create
-peopleController.post('/', async (req, res) => {
+peopleController.post('/new', validateId, validateBody async (req, res) => {
   const body = req.body
  
   if(body.first_name && body.last_name) {
