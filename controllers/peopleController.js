@@ -26,9 +26,9 @@ function validateId (req, res, next){
   next()
 }
 function validateBody (req, res, next){
-  console.log('logging validate body function: ', req.params.id)
+  console.log('logging validate body function: ', req.body)
 
-  const id = req.body.
+  const {first_name, last_name, email, phone, profile_img, dob_month,dob_day, dob_year} = req.body
   if (id < 1 || id != Number.isInteger(Number(id))){
     console.log('keep it simple simon!')
     res.status(400).send('Please enter a valid integer id')
@@ -37,7 +37,7 @@ function validateBody (req, res, next){
   next()
 }
 const validatePersonExist =() => {
-  
+
 }
 // all people route : index / Read
 peopleController.get('/', async (req, res) => {
@@ -62,7 +62,7 @@ peopleController.get('/:id', validateId, async (req, res) => {
 })
 
 // Create new people : Create
-peopleController.post('/new', validateId, validateBody async (req, res) => {
+peopleController.post('/', validateId, validateBody async (req, res) => {
   const body = req.body
  
   if(body.first_name && body.last_name) {

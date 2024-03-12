@@ -19,6 +19,7 @@
   - Games that educate people on "right thinking" and cultivating a culture of positive forward looking thought processes.
   - Absolutely no push advertising!!!!  There will be a page for ads that people can visit voluntarily.  What they view or click on will not be tracked unless they voluntarily save as a favorite or follow.
 
+Trello Board:  https://trello.com/b/gqD5hFDx/backend
 
 
 - DEVELOPERS:
