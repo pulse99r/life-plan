@@ -27,8 +27,9 @@ function validateBody (req, res, next){
   console.log('logging validate body function: ', req.body)
 
   const {first_name, last_name, email, phone, profile_img, dob_month,dob_day, dob_year} = req.body
-  if (first_name && last_name){
-    console.log('keep it simple simon!')
+
+  if (!first_name || !last_name){
+    console.log('keep the body simple simon!')
     res.status(400).send('Please enter a valid integer first name and last name')
   }
 
@@ -60,24 +61,23 @@ peopleController.get('/:id', validateId, async (req, res) => {
 })
 
 // Create new people : Create
-peopleController.post('/', validateId, validateBody, async (req, res) => {
+peopleController.post('/', validateBody, async (req, res) => {
   const body = req.body
- 
-  if(body.first_name && body.last_name) {
+  try {
     const newPerson = await createPerson(body)
-    res.status(201).json(newPerson)
-  } else {
-    const error = {error: `project id (${id}) does not exist!`}
-    res.status(400).json({error: "Please include first_name, last_name, email, phone, password, profile_img"})
+    res.status(201).json(newPerson)    
+  } catch (error) {
+    res.status(400).json({error: "Please include first_name, last_name, email, phone, password, profile_img, dob_month, dob_day, dob_year"})
+    
   }
 })
 
 // Update person Route : Update
-peopleController.put("/:id", async (req, res)=>{
+peopleController.put("/:id", validateId, validateBody, async (req, res)=>{
   const id = req.params.id
   const body = req.body
-  console.log('entered update route')
-  console.log('req.body => ', req.body)
+  // console.log('entered update route')
+  // console.log('req.body => ', req.body)
   const user = await db.oneOrNone("SELECT * FROM lp_users WHERE id=$1", [id])
   if(user){
     if(body.first_name && body.last_name && body.email && body.phone && body.password_hash && body.profile_img){
